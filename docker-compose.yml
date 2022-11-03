@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    platform: linux/amd64
+    container_name: "Company_Simulation-DB"
+    environment:
+      # rootのパスワードを設定
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS}
+      # DBを作成
+      MYSQL_DATABASE: company_simulation
+      # ユーザ作成
+      MYSQL_USER: user
+      MYSQL_PASSWORD: ${DB_USER_PASS}
+    volumes:
+      # データ永続化
+      - ./data:/var/lib/mysql
+      # 設定ファイル共有
+      - ./db/my.conf:/etc/mysql/conf.d/my.cnf
+      # sqlを共有
+      - ./db/sql:/docker-entrypoint-initdb.d
+    ports:
+      - 3307:3306
