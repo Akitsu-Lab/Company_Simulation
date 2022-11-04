@@ -12,13 +12,13 @@ Company_Simulationアプリの環境構築
    read PASS
    ```
    ```shell
-   export DB_ROOT_PASS=PASS
+   export DB_ROOT_PASS=$PASS
    ```
    ```shell
    read USER_PASS
    ```
    ```shell
-   export DB_USER_PASS=USER_PASS
+   export DB_USER_PASS=$USER_PASS
    ```
 3. コンテナの立ち上げ
     ```shell
@@ -60,3 +60,6 @@ Company_Simulationアプリの環境構築
     ```shell
     docker-compose ps
     ```
+  
+### mysqlへのログインが上手くいかない場合
+- dataディレクトリを削除する
