@@ -2,7 +2,9 @@ version: '3'
 services:
   db:
     image: mysql:5.7
+    # m1Macに必要な設定
     platform: linux/amd64
+    # コンテナ名を設定
     container_name: "Company_Simulation-DB"
     environment:
       # rootのパスワードを設定
@@ -16,8 +18,8 @@ services:
       # データ永続化
       - ./data:/var/lib/mysql
       # 設定ファイル共有
-      - ./db/my.conf:/etc/mysql/conf.d/my.cnf
-      # sqlを共有
+      - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
+      # 初期データをマウントする場所,sqlを共有
       - ./db/sql:/docker-entrypoint-initdb.d
     ports:
-      - 3307:3306
+      - "3306:3306"
