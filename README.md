@@ -33,9 +33,13 @@ Company_Simulationアプリの環境構築
     ```shell
     docker exec -it コンテナID /bin/bash
     ```
-5. jdkコンテナに入り、apiのjarファイル起動
+5. APIコンテナに入り、apiのjarファイル起動
    ```shell
    java -jar company_simulation_api-0.0.1-SNAPSHOT.jar
+   ```
+6. UIコンテナに入り、uiのjarファイル起動
+   ```shell
+   java -jar company_simulation_ui-0.0.1-SNAPSHOT.jar
    ```
 6. mysqlにログイン
     - パスワードはdocker-compose.ymlのMYSQL_ROOT_PASSWORDを使用
