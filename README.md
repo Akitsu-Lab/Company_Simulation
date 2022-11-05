@@ -24,7 +24,7 @@ Company_Simulationアプリの環境構築
     ```shell
     docker-compose up -d
     ```
-3. コンテナに入る
+4. コンテナに入る
     - コンテナIDを調べる
     ```shell
     docker ps 
@@ -33,7 +33,11 @@ Company_Simulationアプリの環境構築
     ```shell
     docker exec -it コンテナID /bin/bash
     ```
-4. mysqlにログイン
+5. jdkコンテナに入り、apiのjarファイル起動
+   ```shell
+   java -jar company_simulation_api-0.0.1-SNAPSHOT.jar
+   ```
+6. mysqlにログイン
     - パスワードはdocker-compose.ymlのMYSQL_ROOT_PASSWORDを使用
     ```shell
     mysql -u root -p
@@ -42,11 +46,11 @@ Company_Simulationアプリの環境構築
     ```shell
     exit
     ```
-5. コンテナからログアウト
+7. コンテナからログアウト
     ```shell
     exit
     ```
-6. コンテナのストップ＆停止
+8. コンテナのストップ＆停止
     ```shell
     docker-compose down
     ```
@@ -63,3 +67,9 @@ Company_Simulationアプリの環境構築
   
 ### mysqlへのログインが上手くいかない場合
 - dataディレクトリを削除する
+
+### 参考資料
+- mysqlのenvironment
+  https://hub.docker.com/_/mysql/
+- dockerhubのopenjdk
+  https://hub.docker.com/_/openjdk
