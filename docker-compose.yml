@@ -13,8 +13,6 @@ services:
       employee.api.call.port: 8080
     volumes:
       - ./company_simulation_ui-0.0.1-SNAPSHOT.jar:/company_simulation_ui-0.0.1-SNAPSHOT.jar
-    expose:
-      - 8081
     ports:
       - "8081:8081"
   api:
@@ -32,8 +30,6 @@ services:
       spring.datasource.password: root
     volumes:
       - ./company_simulation_api-0.0.1-SNAPSHOT.jar:/company_simulation_api-0.0.1-SNAPSHOT.jar
-    expose:
-      - 8080
     ports:
       - "8080:8080"
   db:
@@ -57,7 +53,5 @@ services:
       - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
       # 初期データをマウントする場所,sqlを共有
       - ./db/sql:/docker-entrypoint-initdb.d
-    expose:
-      - 3306
     ports:
       - "3306:3306"
