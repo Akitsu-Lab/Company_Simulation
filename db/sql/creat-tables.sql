@@ -24,3 +24,5 @@ INSERT INTO employee
 VALUES (1, '山田', 30, '大学院', 6000000, 1, 'リーダー', 'プログラマー', NOW(), NOW());
 INSERT INTO employee
 VALUES (2, 'サル', 25, '大学', 5500000, 1, '平社員', 'プログラマー', NOW(), NOW());
+INSERT INTO employee
+VALUES (3, 'クソザル', 22, '大学', 4000000, 1, '新卒社員', 'プログラマー', NOW(), NOW());
